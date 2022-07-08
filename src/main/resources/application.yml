@@ -1,0 +1,21 @@
+#JPA configs for MySQL
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useTimezone=true&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        ddl-auto: create-drop
+        search:
+          backend:
+            type: lucene
+            directory.root: ./data/index
+    show-sql: true
+    open-in-view: false
